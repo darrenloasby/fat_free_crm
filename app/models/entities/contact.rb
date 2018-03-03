@@ -39,7 +39,7 @@
 #
 
 class Contact < ActiveRecord::Base
-  belongs_to :user
+  belongs_to :user, optional: true
   belongs_to :lead
   belongs_to :assignee, class_name: "User", foreign_key: :assigned_to
   belongs_to :reporting_user, class_name: "User", foreign_key: :reports_to

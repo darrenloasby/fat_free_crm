@@ -22,7 +22,7 @@
 #
 
 class Comment < ActiveRecord::Base
-  belongs_to :user
+  belongs_to :user, optional: true
   belongs_to :commentable, polymorphic: true
 
   scope :created_by, ->(user) { where(user_id: user.id) }

@@ -31,7 +31,7 @@
 
 class Email < ActiveRecord::Base
   belongs_to :mediator, polymorphic: true
-  belongs_to :user
+  belongs_to :user, optional: true
 
   has_paper_trail class_name: 'Version', meta: { related: :mediator },
                   ignore: [:state]

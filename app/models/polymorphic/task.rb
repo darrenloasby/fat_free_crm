@@ -33,7 +33,7 @@ class Task < ActiveRecord::Base
   attr_accessor :calendar
   ALLOWED_VIEWS = %w[pending assigned completed]
 
-  belongs_to :user
+  belongs_to :user, optional: true
   belongs_to :assignee, class_name: "User", foreign_key: :assigned_to
   belongs_to :completor, class_name: "User", foreign_key: :completed_by
   belongs_to :asset, polymorphic: true

@@ -18,7 +18,7 @@
 #
 
 class Permission < ActiveRecord::Base
-  belongs_to :user, optional: true
+  belongs_to :user, optional: true, optional: true
   belongs_to :group, optional: true
   belongs_to :asset, polymorphic: true
 

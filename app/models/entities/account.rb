@@ -28,7 +28,7 @@
 #
 
 class Account < ActiveRecord::Base
-  belongs_to :user
+  belongs_to :user, optional: true
   belongs_to :assignee, class_name: "User", foreign_key: :assigned_to
   has_many :account_contacts, dependent: :destroy
   has_many :contacts, -> { distinct }, through: :account_contacts
